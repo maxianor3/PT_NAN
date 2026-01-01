@@ -1,0 +1,372 @@
+/* =====================
+   RESET & GLOBAL
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c2c2c;
+    background: #ffffff;
+}
+
+/* =====================
+   HEADER
+===================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 60px;
+    background: #0f3d2e;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+    border-radius: 7px;
+    margin-left: -40px;
+    /* margin-top: 10px; */
+}
+
+.logo_nan_text {
+    color: rgb(243, 236, 236);
+    margin-left: -5px;
+    margin-top: -10px;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+.nan-1 {
+    color: blue;
+    /* background-color: #f4f7f6; */
+    /* margin-left: -700px; */
+}
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==== HOME ==== */
+#home {
+   margin-top: -5px;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+    background: linear-gradient(
+        rgba(117, 3, 3, 0.767),
+        rgba(2, 82, 44, 0.8)
+    ); /*url("img/hero.jpg") center/cover no-repeat;*/
+    color: #fff;
+    padding: 140px 60px;
+    text-align: center;
+}
+
+.noah-1 {
+    color: rgb(203, 204, 204);
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 20px;
+}
+
+/* =====================
+   SECTION
+===================== */
+.section {
+    padding: 80px 60px;
+}
+
+.section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #0f3d2e;
+    margin-left: -6px;
+}
+
+.section h3 {
+    margin-top: 20px;
+    color: #0f3d2e;
+}
+
+.misi-2 {
+    /* color: blue; */
+    margin-left: 25px;
+}
+
+.section.gray {
+    background: #f4f7f6;
+}
+
+.section.dark {
+    background: #0f3d2e;
+    color: #fff;
+}
+
+.section.dark h2 {
+    color: #fff;
+}
+
+/* =====================
+   BUSINESS
+===================== */
+.business-list {
+    list-style: none;
+    font-size: 18px;
+}
+
+.business-list li {
+    margin-bottom: 12px;
+    padding-left: 18px;
+    position: relative;
+}
+
+.business-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #0f3d2e;
+}
+
+/* =====================
+   WHY US
+===================== */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    /* border-radius: 1px solid red; */
+}
+
+.why-grid div {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.548);
+
+}
+
+/* =====================
+   GALLERY
+===================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 200px;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+    background: #575656;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .nav a {
+        margin-left: 15px;
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .section {
+        padding: 60px 20px;
+    }
+}
+
+
+/* =====================
+   ANIMATION EFFECT
+===================== */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================
+   HEADER SHRINK
+===================== */
+.header.shrink {
+    padding: 10px 60px;
+    background: #575656;
+    transition: all 0.3s ease;
+}
+
+/* =====================
+   HOVER ELEGANT
+===================== */
+.purch-card:hover,
+.why-grid div:hover,
+.gallery img:hover {
+    transform: translateY(-6px);
+    transition: transform 0.3s ease;
+}
+
+
+/* =====================
+   LIGHTBOX GALLERY
+===================== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+    z-index: 9999;
+}
+
+.lightbox.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 85%;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: zoomIn 0.4s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+/* Zoom animation */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+/* ===============================
+   CONTACT + CTA (BOTTOM SECTION)
+================================ */
+.contact-cta-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+
+    padding: 60px 40px;
+    background: #0f2d1e; /* hijau gelap elegan */
+    color: #fff;
+}
+
+/* KONTAK - KIRI */
+.contact-box {
+    flex: 1;
+}
+
+.contact-box h2 {
+    margin-bottom: 16px;
+    color: #9ef0c4;
+}
+
+.contact-box p {
+    line-height: 1.6;
+}
+
+/* CTA - KANAN */
+.cta-box {
+    flex: 1;
+    /* background: #134734; */
+    padding: 30px;
+    border-radius: 12px;
+    text-align: right;
+}
+
+.cta-box h2 {
+    margin-bottom: 16px;
+    color: #ffe08a;
+}
+
+.cta-box p {
+    line-height: 1.6;
+    text-align: right;
+}
+
+
+@media (max-width: 768px) {
+    .contact-cta-wrapper {
+        flex-direction: column;
+    }
+}
